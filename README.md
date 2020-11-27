@@ -7,8 +7,8 @@
 #SBATCH --mem=32G			              # Memory per node (4GB); I have changed from 4 GB to 32 GB because "out of memory" error message
 #SBATCH --time=1:00:00              # Time limit hrs:min:sec or days-hours:minutes:seconds
 #SBATCH --export=NONE               # Do not export any user’s explicit environment variables to compute node
-#SBATCH --output=/log/01.out        # Standard output log, e.g., 
-#SBATCH --error=/log/01.err     	  # Standard error log, e.g., 
+#SBATCH --output=./log/01.out        # Standard output log, e.g., 
+#SBATCH --error=./log/01.err     	  # Standard error log, e.g., 
 #SBATCH --mail-user=lw78943@uga.edu # Where to send mail
 #SBATCH --mail-type=END,FAIL        # Mail events (BEGIN, END, FAIL, ALL)
 
