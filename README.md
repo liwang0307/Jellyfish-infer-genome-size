@@ -17,14 +17,8 @@ cd /scratch/lw78943/jellyfish			  # Change directory to job submission directory
 module load Jellyfish/2.3.0-GCC-8.3.0   # load module and run jellyfish as below
 cat P-capsci-67_R1.fq | jellyfish count -C -m 99 -s 1000000000 -t 8 -o pcshortreads1.jf /dev/fd/0
 
-# submit script
-sbatch jellyfish.sub.sh
-# check job status
-squeue --me
-# check error log
-less 01.err
-# exit check
-q
-# Generate  a histgram file
-jellyfish histo pcshortreads1.jf >pcshortreads1.histo
-# download pcshortreads1.histo and drag it into http://qb.cshl.edu/genomescope/; set k-mer=99 and read length=150.
+sbatch jellyfish.sub.sh  # submit script
+squeue --me              # check job status
+less 01.err              # check error log
+q                        # exit check
+jellyfish histo pcshortreads1.jf >pcshortreads1.histo # Generate  a histgram file # download pcshortreads1.histo and drag it into http://qb.cshl.edu/genomescope/; set k-mer=99 and read length=150.
